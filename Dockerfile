@@ -10,6 +10,8 @@ COPY ./main.go /app/main.go
 COPY ./go.mod /app/go.mod
 COPY ./go.sum /app/go.sum
 
+RUN apk add --no-cache --no-interactive go
+
 RUN go build main.go
 
 FROM alpine:latest AS production
